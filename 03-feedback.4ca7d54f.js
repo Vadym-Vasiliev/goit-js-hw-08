@@ -1,0 +1,2 @@
+const e=document.querySelector(".feedback-form");e.addEventListener("submit",(function(e){e.preventDefault(),console.log("Отправка  форми"),e.currentTarget.reset(),localStorage.removeItem("feedback-form-state")})),e.addEventListener("input",(e=>{const{name:t,value:a}=e.target;var r;let o=null!==(r=JSON.parse(localStorage.getItem("feedback-form-state")))&&void 0!==r?r:{};o[t]=a,localStorage.setItem("feedback-form-state",JSON.stringify(o))}));
+//# sourceMappingURL=03-feedback.4ca7d54f.js.map
