@@ -30,6 +30,16 @@ player.on(
 
 // Під час перезавантаження сторінки скористайся методом setCurrentTime() з метою відновлення відтворення зі збереженої позиції.
 
-player.setCurrentTime(JSON.parse(localStorage.getItem(VIDEO_KEY)));
+player
+  .setCurrentTime(JSON.parse(localStorage.getItem(VIDEO_KEY)))
+  .catch(function (error) {
+    switch (error.name) {
+      case 'RangeError':
+        break;
+      default:
+        // some other error occurred
+        break;
+    }
+  });
 
 //Додай до проекту бібілотеку lodash.throttle і зроби так, щоб час відтворення оновлювався у сховищі не частіше, ніж раз на секунду.
